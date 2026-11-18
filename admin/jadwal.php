@@ -83,7 +83,7 @@ require_once __DIR__ . '/../includes/header.php';
             <h3 class="fw-bold text-white mb-1">
                 <i class="bi bi-calendar3-range-fill text-warning me-2"></i>Kelola Jadwal Penayangan
             </h3>
-            <p class="text-muted small mb-0">Implementasi method <code>Admin.kelolaJadwal()</code> (Tambah, Ubah, Hapus)</p>
+            <p class="text-muted small mb-0">Atur penayangan film, tanggal, jam tayang, studio, dan harga tiket</p>
         </div>
         <button class="btn btn-warning text-dark fw-bold rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalTambahJadwal">
             <i class="bi bi-plus-circle me-1"></i> Tambah Jadwal Baru
@@ -101,7 +101,7 @@ require_once __DIR__ . '/../includes/header.php';
                         <th>STUDIO</th>
                         <th>TANGGAL & JAM</th>
                         <th>HARGA DASAR</th>
-                        <th>HARGA TIKET (POLIMORFISME)</th>
+                        <th>HARGA TIKET</th>
                         <th>STATUS</th>
                         <th class="text-end">AKSI</th>
                     </tr>

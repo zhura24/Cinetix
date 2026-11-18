@@ -98,7 +98,7 @@ require_once __DIR__ . '/../includes/header.php';
                 <h4 class="fw-bold text-white mb-1">
                     <i class="bi bi-file-earmark-bar-graph text-warning me-2"></i>Laporan Penjualan Bioskop
                 </h4>
-                <p class="text-muted small mb-0">Implementasi method <code>Admin.lihatLaporan()</code> dari kode Java CineTix</p>
+                <p class="text-muted small mb-0">Rekapitulasi transaksi penjualan tiket bioskop yang telah terkonfirmasi</p>
             </div>
             <button onclick="window.print()" class="btn btn-outline-light btn-sm rounded-pill px-3">
                 <i class="bi bi-printer me-1"></i> Cetak Laporan

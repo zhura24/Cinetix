@@ -63,7 +63,7 @@ require_once __DIR__ . '/../includes/header.php';
             <h3 class="fw-bold text-white mb-1">
                 <i class="bi bi-upc-scan text-info me-2"></i>Validasi Tiket (Gate Check-In) & Cetak
             </h3>
-            <p class="text-muted small mb-0">Implementasi method <code>Tiket.validasi()</code> dan <code>Kasir.cetakTiket()</code></p>
+            <p class="text-muted small mb-0">Pemeriksaan keabsahan tiket penonton di pintu studio dan cetak tiket loket</p>
         </div>
         <a href="index.php" class="btn btn-outline-warning btn-sm rounded-pill px-3">
             <i class="bi bi-cash-coin me-1"></i> Ke Verifikasi Pembayaran Tunai &rarr;

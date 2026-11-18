@@ -72,7 +72,7 @@ require_once __DIR__ . '/../includes/header.php';
             <h3 class="fw-bold text-white mb-1">
                 <i class="bi bi-collection-play-fill text-warning me-2"></i>Kelola Film
             </h3>
-            <p class="text-muted small mb-0">Implementasi method <code>Admin.kelolaFilm()</code> (Tambah, Ubah Rating Usia, Hapus)</p>
+            <p class="text-muted small mb-0">Kelola daftar film bioskop, rating usia, dan informasi penayangan</p>
         </div>
         <button class="btn btn-warning text-dark fw-bold rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalTambahFilm">
             <i class="bi bi-plus-circle me-1"></i> Tambah Film Baru

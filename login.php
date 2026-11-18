@@ -3,30 +3,6 @@
 $pageTitle = 'Login - CineTix';
 require_once __DIR__ . '/classes/autoload.php';
 
-// Quick login handler via URL parameter
-if (isset($_GET['quick'])) {
-    $quick = $_GET['quick'];
-    if ($quick === 'admin') {
-        $u = CineTix::login('admin@cinetix.com', 'admin123');
-        if ($u) {
-            header('Location: admin/index.php');
-            exit;
-        }
-    } elseif ($quick === 'kasir') {
-        $u = CineTix::login('kasir@cinetix.com', 'kasir123');
-        if ($u) {
-            header('Location: kasir/index.php');
-            exit;
-        }
-    } elseif ($quick === 'pelanggan') {
-        $u = CineTix::login('budi@mail.com', 'budi123');
-        if ($u) {
-            header('Location: index.php');
-            exit;
-        }
-    }
-}
-
 $error = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -90,24 +66,6 @@ require_once __DIR__ . '/includes/header.php';
                     <a href="register.php" class="btn btn-outline-light btn-sm rounded-pill px-4">
                         Daftar Sebagai Pelanggan
                     </a>
-                </div>
-
-                <!-- Demo Credentials -->
-                <div class="mt-4 p-3 bg-dark rounded border border-secondary">
-                    <div class="fw-bold text-warning small mb-2">
-                        <i class="bi bi-info-circle me-1"></i> Akun Demo Cepat (1-Klik):
-                    </div>
-                    <div class="d-grid gap-2">
-                        <a href="login.php?quick=pelanggan" class="btn btn-outline-warning btn-sm text-start py-2">
-                            <i class="bi bi-person me-2"></i><strong>Pelanggan:</strong> budi@mail.com / budi123
-                        </a>
-                        <a href="login.php?quick=kasir" class="btn btn-outline-info btn-sm text-start py-2">
-                            <i class="bi bi-cash-coin me-2"></i><strong>Kasir:</strong> kasir@cinetix.com / kasir123
-                        </a>
-                        <a href="login.php?quick=admin" class="btn btn-outline-danger btn-sm text-start py-2">
-                            <i class="bi bi-shield-lock me-2"></i><strong>Admin:</strong> admin@cinetix.com / admin123
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>

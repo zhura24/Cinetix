@@ -34,7 +34,7 @@ require_once __DIR__ . '/includes/header.php';
             <h3 class="fw-bold text-white mb-1">
                 <i class="bi bi-ticket-perforated text-warning me-2"></i>Riwayat Pemesanan Tiket
             </h3>
-            <p class="text-muted small mb-0">Daftar semua transaksi pemesanan tiket Anda di CineTix</p>
+            <p class="page-subtitle mb-0">Daftar semua transaksi pemesanan tiket Anda di CineTix</p>
         </div>
         <a href="index.php" class="btn btn-warning btn-sm text-dark fw-bold rounded-pill px-3">
             <i class="bi bi-plus-circle me-1"></i> Pesan Tiket Baru
@@ -43,9 +43,9 @@ require_once __DIR__ . '/includes/header.php';
 
     <?php if (empty($riwayat)): ?>
         <div class="card card-custom p-5 text-center shadow-sm">
-            <i class="bi bi-ticket-detailed display-3 text-muted mb-3"></i>
+            <i class="bi bi-ticket-detailed display-3 text-warning opacity-50 mb-3"></i>
             <h5 class="text-white fw-bold mb-2">Belum Ada Riwayat Pemesanan</h5>
-            <p class="text-muted small mb-4">Anda belum pernah memesan tiket film di CineTix. Yuk tonton film seru sekarang!</p>
+            <p class="text-light opacity-75 small mb-4">Anda belum pernah memesan tiket film di CineTix. Yuk tonton film seru sekarang!</p>
             <div>
                 <a href="index.php" class="btn btn-warning text-dark fw-bold rounded-pill px-4">
                     Jelajahi Film
@@ -73,7 +73,7 @@ require_once __DIR__ . '/includes/header.php';
                                 <span class="badge bg-dark border border-secondary text-light font-monospace">
                                     <?= htmlspecialchars($ps->getIdPemesanan()) ?>
                                 </span>
-                                <span class="text-muted small">&bull; <?= date('d M Y, H:i', strtotime($ps->getWaktuPesan())) ?> WIB</span>
+                                <span class="text-light opacity-75 small">&bull; <?= date('d M Y, H:i', strtotime($ps->getWaktuPesan())) ?> WIB</span>
                             </div>
                             <div>
                                 <span class="badge <?= $badgeClass ?> px-3 py-2 rounded-pill fw-bold">
@@ -88,7 +88,7 @@ require_once __DIR__ . '/includes/header.php';
                             </div>
                             <div class="col-md-6">
                                 <h5 class="fw-bold text-white mb-1"><?= htmlspecialchars($film->getJudul()) ?></h5>
-                                <div class="text-muted small mb-2">
+                                <div class="text-light opacity-75 small mb-2">
                                     <span class="badge bg-secondary me-1"><?= htmlspecialchars($film->getGenre()) ?></span>
                                     <span><?= $film->getDurasi() ?> menit &bull; Rating: <?= htmlspecialchars($film->getRatingUsia()) ?></span>
                                 </div>
@@ -99,17 +99,17 @@ require_once __DIR__ . '/includes/header.php';
                                     <i class="bi bi-calendar-event text-info me-1"></i> <?= date('d M Y', strtotime($jadwal->getTanggal())) ?>, <?= htmlspecialchars($jadwal->getJamMulai()) ?> WIB
                                 </div>
                                 <div class="d-flex flex-wrap gap-1 align-items-center">
-                                    <span class="small text-muted me-1">Kursi:</span>
+                                    <span class="small text-light opacity-75 me-1">Kursi:</span>
                                     <?php foreach ($ps->getTiket() as $t): ?>
                                         <span class="badge bg-primary"><?= htmlspecialchars($t->getKursi()->getNomorKursi()) ?></span>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
                             <div class="col-md-4 text-md-end border-top border-md-top-0 border-secondary pt-3 pt-md-0">
-                                <div class="text-muted small mb-1">Total Tagihan</div>
+                                <div class="text-light opacity-75 small mb-1">Total Tagihan</div>
                                 <h4 class="fw-bold text-warning mb-2"><?= CineTix::rp($ps->getTotalHarga()) ?></h4>
-                                <div class="small text-muted mb-3">
-                                    Bayar: <strong><?= $bayar ? htmlspecialchars($bayar->getStatus()) : '-' ?></strong>
+                                <div class="small text-light opacity-75 mb-3">
+                                    Bayar: <strong class="text-white"><?= $bayar ? htmlspecialchars($bayar->getStatus()) : '-' ?></strong>
                                 </div>
 
                                 <div class="d-flex justify-content-md-end gap-2 flex-wrap">

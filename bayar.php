@@ -155,7 +155,7 @@ require_once __DIR__ . '/includes/header.php';
                     <i class="bi bi-clock-history text-danger fs-3"></i>
                     <div>
                         <div class="fw-bold text-white">Selesaikan Pembayaran Sebelum Waktu Habis</div>
-                        <div class="text-muted small">Kursi akan dilepaskan otomatis jika tidak dibayar dalam batas waktu.</div>
+                        <div class="text-light opacity-75 small">Kursi akan dilepaskan otomatis jika tidak dibayar dalam batas waktu.</div>
                     </div>
                 </div>
                 <div class="timer-box">
@@ -178,19 +178,19 @@ require_once __DIR__ . '/includes/header.php';
                 <!-- Info Pesanan -->
                 <div class="row g-3 mb-4 p-3 bg-dark rounded border border-secondary">
                     <div class="col-sm-6">
-                        <span class="text-muted small d-block">Judul Film</span>
+                        <span class="text-light opacity-75 small d-block">Judul Film</span>
                         <span class="fw-bold text-light"><?= htmlspecialchars($film->getJudul()) ?></span>
                     </div>
                     <div class="col-sm-6">
-                        <span class="text-muted small d-block">Studio & Jadwal</span>
+                        <span class="text-light opacity-75 small d-block">Studio & Jadwal</span>
                         <span class="fw-bold text-light"><?= htmlspecialchars($studio->getNamaStudio()) ?> &bull; <?= date('d M Y', strtotime($jadwal->getTanggal())) ?> <?= htmlspecialchars($jadwal->getJamMulai()) ?> WIB</span>
                     </div>
                     <div class="col-sm-6">
-                        <span class="text-muted small d-block">Kursi Dipesan (<?= count($kursiList) ?> Kursi)</span>
+                        <span class="text-light opacity-75 small d-block">Kursi Dipesan (<?= count($kursiList) ?> Kursi)</span>
                         <span class="badge bg-primary fs-6 me-1"><?= implode(', ', $kursiList) ?></span>
                     </div>
                     <div class="col-sm-6">
-                        <span class="text-muted small d-block">Total Tagihan</span>
+                        <span class="text-light opacity-75 small d-block">Total Tagihan</span>
                         <span class="fw-bold text-warning fs-5"><?= CineTix::rp($pesanan->getTotalHarga()) ?></span>
                     </div>
                 </div>
@@ -221,7 +221,7 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="tab-pane fade show active" id="tab-ewallet" role="tabpanel">
                         <div class="p-3 bg-dark rounded border border-secondary mb-3">
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="text-muted">Saldo E-Wallet Anda:</span>
+                                <span class="text-light opacity-75">Saldo E-Wallet Anda:</span>
                                 <span class="fw-bold text-warning fs-6"><?= CineTix::rp($user->getSaldo()) ?></span>
                             </div>
                             <?php if ($user->getSaldo() < $pesanan->getTotalHarga()): ?>
@@ -264,7 +264,7 @@ require_once __DIR__ . '/includes/header.php';
                     <!-- Tab 2: Transfer Bank -->
                     <div class="tab-pane fade" id="tab-transfer" role="tabpanel">
                         <div class="p-3 bg-dark rounded border border-secondary mb-3">
-                            <p class="text-muted small mb-0">
+                            <p class="text-light opacity-75 small mb-0">
                                 Pembayaran transfer dilakukan melalui Virtual Account bank resmi CineTix dengan simulasi verifikasi mutasi otomatis.
                             </p>
                         </div>
@@ -293,7 +293,7 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="tab-pane fade" id="tab-tunai" role="tabpanel">
                         <div class="p-3 bg-dark rounded border border-secondary mb-4">
                             <div class="fw-bold text-warning mb-2"><i class="bi bi-info-circle me-1"></i> Petunjuk Bayar di Kasir:</div>
-                            <ol class="small text-muted mb-0 ps-3">
+                            <ol class="small text-light opacity-75 mb-0 ps-3">
                                 <li>Tunjukkan Kode Pesanan <strong><?= htmlspecialchars($pesanan->getIdPemesanan()) ?></strong> kepada kasir bioskop.</li>
                                 <li>Serahkan uang tunai sebesar <strong><?= CineTix::rp($pesanan->getTotalHarga()) ?></strong>.</li>
                                 <li>Kasir akan memverifikasi pembayaran dan mencetak tiket fisik untuk Anda.</li>

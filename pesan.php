@@ -51,7 +51,7 @@ require_once __DIR__ . '/includes/header.php';
                         <h4 class="fw-bold text-white mb-1">
                             <i class="bi bi-grid-3x3 text-warning me-2"></i>Pilih Kursi Bioskop
                         </h4>
-                        <p class="text-muted small mb-0">Klik pada kursi yang tersedia untuk memilih tempat duduk Anda</p>
+                        <p class="page-subtitle mb-0">Klik pada kursi yang tersedia untuk memilih tempat duduk Anda</p>
                     </div>
                     <span class="badge <?= $studio instanceof StudioPremium ? 'bg-warning text-dark' : 'bg-primary' ?> px-3 py-2 rounded-pill">
                         <?= htmlspecialchars($studio->getNamaStudio()) ?>
@@ -63,7 +63,7 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="cinema-screen">
                         <i class="bi bi-display me-2"></i> LAYAR BIOSKOP
                     </div>
-                    <small class="text-muted">Arah pandangan ke depan</small>
+                    <small class="text-light opacity-75">Arah pandangan ke depan</small>
                 </div>
 
                 <!-- Seat Grid -->
@@ -138,25 +138,25 @@ require_once __DIR__ . '/includes/header.php';
                     <div>
                         <h6 class="fw-bold text-white mb-1"><?= htmlspecialchars($film->getJudul()) ?></h6>
                         <span class="badge bg-secondary mb-1"><?= htmlspecialchars($film->getGenre()) ?></span>
-                        <div class="small text-muted"><?= $film->getDurasi() ?> menit &bull; <?= htmlspecialchars($film->getRatingUsia()) ?></div>
+                        <div class="small text-light opacity-75"><?= $film->getDurasi() ?> menit &bull; <?= htmlspecialchars($film->getRatingUsia()) ?></div>
                     </div>
                 </div>
 
                 <div class="p-3 bg-dark rounded border border-secondary mb-3 small">
                     <div class="d-flex justify-content-between mb-2 text-light">
-                        <span class="text-muted">Studio:</span>
-                        <span class="fw-bold"><?= htmlspecialchars($studio->getNamaStudio()) ?></span>
+                        <span class="text-light opacity-75">Studio:</span>
+                        <span class="fw-bold text-white"><?= htmlspecialchars($studio->getNamaStudio()) ?></span>
                     </div>
                     <div class="d-flex justify-content-between mb-2 text-light">
-                        <span class="text-muted">Jadwal:</span>
-                        <span class="fw-bold"><?= date('d M Y', strtotime($jadwal->getTanggal())) ?></span>
+                        <span class="text-light opacity-75">Jadwal:</span>
+                        <span class="fw-bold text-white"><?= date('d M Y', strtotime($jadwal->getTanggal())) ?></span>
                     </div>
                     <div class="d-flex justify-content-between mb-2 text-light">
-                        <span class="text-muted">Jam Mulai:</span>
-                        <span class="fw-bold"><?= htmlspecialchars($jadwal->getJamMulai()) ?> WIB</span>
+                        <span class="text-light opacity-75">Jam Mulai:</span>
+                        <span class="fw-bold text-white"><?= htmlspecialchars($jadwal->getJamMulai()) ?> WIB</span>
                     </div>
                     <div class="d-flex justify-content-between text-light">
-                        <span class="text-muted">Harga per Kursi:</span>
+                        <span class="text-light opacity-75">Harga per Kursi:</span>
                         <span class="fw-bold text-warning"><?= CineTix::rp($hargaPerTiket) ?></span>
                     </div>
                 </div>
@@ -169,7 +169,7 @@ require_once __DIR__ . '/includes/header.php';
                     <input type="hidden" name="kursi" id="selected-seats-input" value="">
 
                     <div class="mb-3">
-                        <label class="form-label text-muted small mb-1">Kursi yang Dipilih:</label>
+                        <label class="form-label text-light opacity-75 small mb-1">Kursi yang Dipilih:</label>
                         <div class="p-2 bg-dark rounded border border-secondary text-light fw-bold" id="selected-seats-display">
                             Belum ada kursi dipilih
                         </div>

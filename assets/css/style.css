@@ -8,13 +8,182 @@
     --accent-gold: #f5c518;
     --accent-cyan: #38bdf8;
     --text-main: #f8fafc;
-    --text-muted: #94a3b8;
+    --text-muted: #cbd5e1; /* Slate terang berkontras tinggi */
+    --text-sub: #94a3b8;
     --border-color: #334155;
     --seat-available: #334155;
     --seat-available-hover: #475569;
     --seat-selected: #f5c518;
     --seat-held: #d97706;
     --seat-booked: #dc2626;
+}
+
+/* ============================================================
+   GLOBAL HIGH-CONTRAST TYPOGRAPHY OVERRIDES
+   Memastikan SEMUA teks terbaca jelas, terang, dan tidak nyaru
+   pada background gelap bioskop (#0b0f19 dan #151c2e)
+   ============================================================ */
+
+/* 1. Paksa text-muted dan text-secondary agar tidak memakai abu-abu gelap default Bootstrap */
+.text-muted,
+.text-secondary,
+.text-body-secondary,
+p.text-muted,
+p.text-secondary,
+span.text-muted,
+span.text-secondary,
+small.text-muted,
+small.text-secondary,
+.small.text-muted,
+.small.text-secondary,
+div.text-muted,
+div.text-secondary,
+td.text-muted,
+td.text-secondary {
+    color: #cbd5e1 !important; /* Rasio kontras 9.8:1 terhadap background #151c2e */
+}
+
+/* Keterangan sekunder yang sedikit lebih redup tapi tetap sangat terbaca */
+.text-subtle {
+    color: #94a3b8 !important;
+}
+
+/* Judul dan teks utama */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #ffffff !important;
+}
+
+/* Lead text di hero banner */
+p.lead.text-secondary,
+.hero-section p {
+    color: #e2e8f0 !important;
+}
+
+/* 2. Stat Cards pada Dashboard Admin & Halaman Kasir */
+.stat-card-label {
+    color: #e2e8f0 !important; /* Sangat terang dan kontras tinggi di atas bg gelap */
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-card-sub {
+    color: #cbd5e1 !important;
+    font-size: 0.82rem;
+}
+
+.stat-card-val {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/* Subtitle header halaman */
+.page-subtitle {
+    color: #cbd5e1 !important;
+    font-size: 0.9rem;
+}
+
+/* 3. Table Header & Cells */
+.table-dark thead th,
+.table thead th,
+table thead tr.text-secondary th,
+.table-dark th {
+    color: #f8fafc !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    background-color: #1e293b !important;
+    border-bottom: 2px solid #475569 !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+.table-dark td {
+    color: #f1f5f9 !important;
+    border-color: #334155 !important;
+}
+
+.table-dark td .small.text-muted,
+.table-dark td .text-muted,
+.table-dark td .text-secondary {
+    color: #cbd5e1 !important;
+}
+
+/* 4. Form Labels, Inputs, & Placeholders */
+.form-label {
+    color: #f1f5f9 !important;
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    color: #ffffff !important;
+    background-color: #0b0f19 !important;
+    border-color: #475569 !important;
+}
+
+.form-control::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1;
+}
+
+.form-control:focus,
+.form-select:focus {
+    color: #ffffff !important;
+    background-color: #0f172a !important;
+    border-color: #f5c518 !important;
+    box-shadow: 0 0 0 0.25rem rgba(245, 197, 24, 0.25) !important;
+}
+
+.input-group-text {
+    background-color: #1e293b !important;
+    color: #cbd5e1 !important;
+    border-color: #475569 !important;
+}
+
+/* 5. Movie Cards */
+.card-movie .card-text {
+    color: #cbd5e1 !important;
+    line-height: 1.5;
+}
+
+.card-movie .text-muted {
+    color: #cbd5e1 !important;
+}
+
+/* 6. Breadcrumb */
+.breadcrumb-item,
+.breadcrumb-item a,
+.breadcrumb-item.active {
+    color: #cbd5e1 !important;
+}
+
+.breadcrumb-item a:hover {
+    color: #f5c518 !important;
+}
+
+/* 7. Footer Text */
+footer p,
+footer .small,
+footer span,
+footer a {
+    color: #cbd5e1 !important;
+}
+
+footer a:hover {
+    color: #f5c518 !important;
+}
+
+/* 8. Ticket Details High-Contrast */
+.ticket-body .text-muted {
+    color: #cbd5e1 !important;
+}
+
+.ticket-divider::before,
+.ticket-divider::after {
+    background-color: var(--bg-dark) !important;
 }
 
 body {

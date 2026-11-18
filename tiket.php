@@ -68,15 +68,15 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="p-3 bg-dark rounded border border-secondary mb-3">
                             <div class="row text-center g-2">
                                 <div class="col-4 border-end border-secondary">
-                                    <span class="text-muted small d-block">TANGGAL</span>
+                                    <span class="text-light opacity-75 small d-block">TANGGAL</span>
                                     <span class="fw-bold text-light small"><?= date('d M Y', strtotime($jadwal->getTanggal())) ?></span>
                                 </div>
                                 <div class="col-4 border-end border-secondary">
-                                    <span class="text-muted small d-block">JAM</span>
+                                    <span class="text-light opacity-75 small d-block">JAM</span>
                                     <span class="fw-bold text-warning small"><?= htmlspecialchars($jadwal->getJamMulai()) ?> WIB</span>
                                 </div>
                                 <div class="col-4">
-                                    <span class="text-muted small d-block">KURSI</span>
+                                    <span class="text-light opacity-75 small d-block">KURSI</span>
                                     <span class="fw-black text-danger fs-5"><?= htmlspecialchars($t->getKursi()->getNomorKursi()) ?></span>
                                 </div>
                             </div>
@@ -84,11 +84,11 @@ require_once __DIR__ . '/includes/header.php';
 
                         <div class="ticket-divider"></div>
 
-                        <div class="d-flex justify-content-between align-items-center small text-muted mb-2">
+                        <div class="d-flex justify-content-between align-items-center small text-light opacity-75 mb-2">
                             <span>Nama Penonton:</span>
-                            <span class="text-light fw-bold"><?= htmlspecialchars($pesanan->getPelanggan()->getNama()) ?></span>
+                            <span class="text-white fw-bold"><?= htmlspecialchars($pesanan->getPelanggan()->getNama()) ?></span>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center small text-muted mb-3">
+                        <div class="d-flex justify-content-between align-items-center small text-light opacity-75 mb-3">
                             <span>Status Tiket:</span>
                             <?php if ($t->isStatusPakai()): ?>
                                 <span class="badge bg-danger">SUDAH DIPAKAI (CHECKED-IN)</span>
@@ -99,7 +99,7 @@ require_once __DIR__ . '/includes/header.php';
 
                         <!-- Barcode Simulation -->
                         <div class="barcode-sim"></div>
-                        <div class="text-center font-monospace text-muted small mt-1" style="font-size: 0.75rem;">
+                        <div class="text-center font-monospace text-light opacity-75 small mt-1" style="font-size: 0.75rem;">
                             * <?= htmlspecialchars($t->getKodeTiket()) ?> *
                         </div>
                     </div>

@@ -8,21 +8,21 @@
         <div class="row align-items-center g-3">
             <div class="col-md-6 text-center text-md-start">
                 <h6 class="text-warning mb-1 fw-bold"><i class="bi bi-film me-2"></i>CineTix Cinema</h6>
-                <p class="text-muted small mb-0">
+                <p class="text-light opacity-75 small mb-0">
                     Sistem pemesanan tiket bioskop modern dengan kemudahan reservasi kursi dan berbagai metode pembayaran.
                 </p>
             </div>
             <div class="col-md-6 text-center text-md-end">
-                <ul class="list-inline mb-0 small text-muted">
-                    <li class="list-inline-item"><a href="<?= $baseUrl ?>index.php" class="text-secondary text-decoration-none">Beranda</a></li>
+                <ul class="list-inline mb-0 small text-light opacity-75">
+                    <li class="list-inline-item"><a href="<?= $baseUrl ?>index.php" class="text-light text-decoration-none">Beranda</a></li>
                     <li class="list-inline-item">&bull;</li>
-                    <li class="list-inline-item"><a href="<?= $baseUrl ?>login.php" class="text-secondary text-decoration-none">Masuk</a></li>
+                    <li class="list-inline-item"><a href="<?= $baseUrl ?>login.php" class="text-light text-decoration-none">Masuk</a></li>
                     <li class="list-inline-item">&bull;</li>
-                    <li class="list-inline-item"><a href="<?= $baseUrl ?>register.php" class="text-secondary text-decoration-none">Daftar</a></li>
+                    <li class="list-inline-item"><a href="<?= $baseUrl ?>register.php" class="text-light text-decoration-none">Daftar</a></li>
                 </ul>
             </div>
         </div>
-        <div class="text-center text-muted small mt-3 pt-3 border-top border-secondary">
+        <div class="text-center text-light opacity-75 small mt-3 pt-3 border-top border-secondary">
             &copy; <?= date('Y') ?> CineTix Cinema. All rights reserved.
         </div>
     </div>

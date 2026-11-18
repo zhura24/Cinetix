@@ -83,7 +83,7 @@ require_once __DIR__ . '/../includes/header.php';
             <h3 class="fw-bold text-white mb-1">
                 <i class="bi bi-calendar3-range-fill text-warning me-2"></i>Kelola Jadwal Penayangan
             </h3>
-            <p class="text-muted small mb-0">Atur penayangan film, tanggal, jam tayang, studio, dan harga tiket</p>
+            <p class="page-subtitle mb-0">Atur penayangan film, tanggal, jam tayang, studio, dan harga tiket</p>
         </div>
         <button class="btn btn-warning text-dark fw-bold rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalTambahJadwal">
             <i class="bi bi-plus-circle me-1"></i> Tambah Jadwal Baru
@@ -95,7 +95,7 @@ require_once __DIR__ . '/../includes/header.php';
         <div class="table-responsive">
             <table class="table table-dark table-hover align-middle mb-0">
                 <thead>
-                    <tr class="text-secondary small">
+                    <tr>
                         <th>ID JADWAL</th>
                         <th>FILM</th>
                         <th>STUDIO</th>
@@ -123,13 +123,13 @@ require_once __DIR__ . '/../includes/header.php';
                             </td>
                             <td>
                                 <div class="text-light"><?= date('d M Y', strtotime($j->getTanggal())) ?></div>
-                                <div class="small text-muted"><?= htmlspecialchars($j->getJamMulai()) ?> WIB</div>
+                                <div class="small text-light opacity-75"><?= htmlspecialchars($j->getJamMulai()) ?> WIB</div>
                             </td>
-                            <td class="text-secondary"><?= CineTix::rp($j->getHargaDasar()) ?></td>
+                            <td class="text-light fw-medium"><?= CineTix::rp($j->getHargaDasar()) ?></td>
                             <td class="fw-bold text-warning">
                                 <?= CineTix::rp($j->hitungHargaTiket()) ?>
                                 <?php if ($isPremium): ?>
-                                    <span class="small text-muted d-block" style="font-size: 0.75rem;">(+<?= CineTix::rp($studio->getBiayaTambahan()) ?>)</span>
+                                    <span class="small text-light opacity-75 d-block" style="font-size: 0.75rem;">(+<?= CineTix::rp($studio->getBiayaTambahan()) ?>)</span>
                                 <?php endif; ?>
                             </td>
                             <td>
@@ -265,9 +265,9 @@ require_once __DIR__ . '/../includes/header.php';
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label small fw-bold">Harga Dasar (Rp)</label>
+                        <label class="form-label small fw-bold text-light">Harga Dasar (Rp)</label>
                         <input type="number" name="harga_dasar" class="form-control bg-dark border-secondary text-light" value="40000" step="1000" required>
-                        <small class="text-muted">Untuk studio premium, biaya tambahan akan dihitung otomatis.</small>
+                        <small class="text-light opacity-75">Untuk studio premium, biaya tambahan akan dihitung otomatis.</small>
                     </div>
                 </div>
                 <div class="modal-footer border-secondary">

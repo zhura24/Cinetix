@@ -30,7 +30,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="text-center mb-4">
                     <i class="bi bi-person-lock text-warning display-4"></i>
                     <h3 class="fw-bold text-white mt-2">Masuk ke CineTix</h3>
-                    <p class="text-muted small">Gunakan akun Anda untuk memesan tiket bioskop</p>
+                    <p class="text-light opacity-75 small">Gunakan akun Anda untuk memesan tiket bioskop</p>
                 </div>
 
                 <?php if ($error): ?>
@@ -43,7 +43,7 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="mb-3">
                         <label class="form-label text-light small fw-bold">Email</label>
                         <div class="input-group">
-                            <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-envelope"></i></span>
+                            <span class="input-group-text bg-dark border-secondary text-warning"><i class="bi bi-envelope"></i></span>
                             <input type="email" name="email" class="form-control bg-dark border-secondary text-light" placeholder="nama@email.com" required value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
                         </div>
                     </div>
@@ -51,7 +51,7 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="mb-4">
                         <label class="form-label text-light small fw-bold">Password</label>
                         <div class="input-group">
-                            <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-key"></i></span>
+                            <span class="input-group-text bg-dark border-secondary text-warning"><i class="bi bi-key"></i></span>
                             <input type="password" name="password" class="form-control bg-dark border-secondary text-light" placeholder="Masukkan password" required>
                         </div>
                     </div>
@@ -62,7 +62,7 @@ require_once __DIR__ . '/includes/header.php';
                 </form>
 
                 <div class="mt-4 pt-3 border-top border-secondary text-center">
-                    <p class="text-muted small mb-2">Belum memiliki akun?</p>
+                    <p class="text-light opacity-75 small mb-2">Belum memiliki akun?</p>
                     <a href="register.php" class="btn btn-outline-light btn-sm rounded-pill px-4">
                         Daftar Sebagai Pelanggan
                     </a>

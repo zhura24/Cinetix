@@ -63,7 +63,7 @@ require_once __DIR__ . '/../includes/header.php';
             <h3 class="fw-bold text-white mb-1">
                 <i class="bi bi-upc-scan text-info me-2"></i>Validasi Tiket (Gate Check-In) & Cetak
             </h3>
-            <p class="text-muted small mb-0">Pemeriksaan keabsahan tiket penonton di pintu studio dan cetak tiket loket</p>
+            <p class="page-subtitle mb-0">Pemeriksaan keabsahan tiket penonton di pintu studio dan cetak tiket loket</p>
         </div>
         <a href="index.php" class="btn btn-outline-warning btn-sm rounded-pill px-3">
             <i class="bi bi-cash-coin me-1"></i> Ke Verifikasi Pembayaran Tunai &rarr;
@@ -77,7 +77,7 @@ require_once __DIR__ . '/../includes/header.php';
                 <h5 class="fw-bold text-white border-bottom border-secondary pb-3 mb-3">
                     <i class="bi bi-qr-code-scan text-warning me-2"></i>Validasi Tiket Masuk Studio
                 </h5>
-                <p class="text-muted small">
+                <p class="text-light opacity-75 small">
                     Masukkan kode tiket penonton (contoh: <code>TKT-XXXXXX</code>) untuk memeriksa keabsahan dan mencatat check-in.
                 </p>
 
@@ -134,7 +134,7 @@ require_once __DIR__ . '/../includes/header.php';
                 <h5 class="fw-bold text-white border-bottom border-secondary pb-3 mb-3">
                     <i class="bi bi-printer text-warning me-2"></i>Cetak Tiket Fisik Kasir
                 </h5>
-                <p class="text-muted small">
+                <p class="text-light opacity-75 small">
                     Masukkan kode pesanan penonton untuk mencetak seluruh lembar tiket yang telah terkonfirmasi.
                 </p>
 
@@ -156,7 +156,7 @@ require_once __DIR__ . '/../includes/header.php';
                             <span class="badge bg-success">DIKONFIRMASI</span>
                         </div>
                         <h6 class="fw-bold text-white mb-1"><?= htmlspecialchars($j->getFilm()->getJudul()) ?></h6>
-                        <div class="small text-muted mb-3">
+                        <div class="small text-light opacity-75 mb-3">
                             <?= htmlspecialchars($j->getStudio()->getNamaStudio()) ?> &bull; <?= count($pesananCetak->getTiket()) ?> Kursi
                         </div>
 
@@ -164,7 +164,7 @@ require_once __DIR__ . '/../includes/header.php';
                             <?php foreach ($pesananCetak->getTiket() as $t): ?>
                                 <div class="p-2 bg-black rounded border border-secondary d-flex justify-content-between align-items-center small text-light">
                                     <span>Kursi: <strong class="text-warning"><?= htmlspecialchars($t->getKursi()->getNomorKursi()) ?></strong></span>
-                                    <span class="font-monospace text-muted"><?= htmlspecialchars($t->getKodeTiket()) ?></span>
+                                    <span class="font-monospace text-light opacity-75"><?= htmlspecialchars($t->getKodeTiket()) ?></span>
                                     <span class="badge <?= $t->isStatusPakai() ? 'bg-danger' : 'bg-success' ?>">
                                         <?= $t->isStatusPakai() ? 'Dipakai' : 'Belum Dipakai' ?>
                                     </span>

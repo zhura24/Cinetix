@@ -36,7 +36,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="text-center mb-4">
                     <i class="bi bi-person-plus text-warning display-4"></i>
                     <h3 class="fw-bold text-white mt-2">Daftar Akun Pelanggan</h3>
-                    <p class="text-muted small">Dapatkan saldo awal e-wallet simulasi Rp 200.000!</p>
+                    <p class="text-light opacity-75 small">Dapatkan saldo awal e-wallet simulasi Rp 200.000!</p>
                 </div>
 
                 <?php if ($error): ?>
@@ -72,7 +72,7 @@ require_once __DIR__ . '/includes/header.php';
                 </form>
 
                 <div class="mt-4 pt-3 border-top border-secondary text-center">
-                    <p class="text-muted small mb-0">Sudah punya akun? <a href="login.php" class="text-warning fw-bold">Masuk di sini</a></p>
+                    <p class="text-light opacity-75 small mb-0">Sudah punya akun? <a href="login.php" class="text-warning fw-bold">Masuk di sini</a></p>
                 </div>
             </div>
         </div>

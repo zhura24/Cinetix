@@ -41,7 +41,7 @@ require_once __DIR__ . '/../includes/header.php';
             <h3 class="fw-bold text-white mb-1">
                 <i class="bi bi-cash-coin text-warning me-2"></i>Verifikasi Pembayaran Tunai
             </h3>
-            <p class="text-muted small mb-0">Petugas Kasir: <strong><?= htmlspecialchars($user->getNama()) ?></strong> &bull; Shift: <strong><?= htmlspecialchars($user->getIdShift()) ?></strong></p>
+            <p class="page-subtitle mb-0">Petugas Kasir: <strong class="text-white"><?= htmlspecialchars($user->getNama()) ?></strong> &bull; Shift: <strong class="text-warning"><?= htmlspecialchars($user->getIdShift()) ?></strong></p>
         </div>
         <a href="validasi.php" class="btn btn-outline-info btn-sm rounded-pill px-3">
             <i class="bi bi-upc-scan me-1"></i> Ke Validasi / Scan Tiket &rarr;
@@ -60,11 +60,11 @@ require_once __DIR__ . '/../includes/header.php';
             </div>
             <div class="p-3 bg-black rounded border border-secondary mb-3">
                 <div class="d-flex justify-content-between fs-5 mb-1">
-                    <span class="text-muted">Total Tagihan:</span>
+                    <span class="text-light opacity-75">Total Tagihan:</span>
                     <span class="text-light fw-bold"><?= CineTix::rp($hasilVerifikasi['pesanan']->getTotalHarga()) ?></span>
                 </div>
                 <div class="d-flex justify-content-between fs-5 mb-2">
-                    <span class="text-muted">Uang Diterima:</span>
+                    <span class="text-light opacity-75">Uang Diterima:</span>
                     <span class="text-info fw-bold"><?= CineTix::rp($_POST['uang_diterima']) ?></span>
                 </div>
                 <div class="d-flex justify-content-between fs-4 border-top border-secondary pt-2">
@@ -98,10 +98,10 @@ require_once __DIR__ . '/../includes/header.php';
                     <div class="mb-4">
                         <label class="form-label small fw-bold text-light">Uang Tunai Diterima (Rp)</label>
                         <div class="input-group">
-                            <span class="input-group-text bg-dark border-secondary text-secondary">Rp</span>
+                            <span class="input-group-text bg-dark border-secondary text-warning fw-bold">Rp</span>
                             <input type="number" name="uang_diterima" class="form-control bg-dark border-secondary text-light fs-5 fw-bold" placeholder="50000" step="1000" required>
                         </div>
-                        <small class="text-muted">Sistem akan otomatis menghitung kembalian.</small>
+                        <small class="text-light opacity-75">Sistem akan otomatis menghitung kembalian.</small>
                     </div>
 
                     <button type="submit" class="btn btn-warning text-dark fw-bold w-100 rounded-pill py-2">
@@ -140,8 +140,8 @@ require_once __DIR__ . '/../includes/header.php';
                                     </div>
                                     <span class="fw-bold text-warning fs-6"><?= CineTix::rp($ps->getTotalHarga()) ?></span>
                                 </div>
-                                <div class="small text-muted mb-2">
-                                    Film: <strong class="text-light"><?= htmlspecialchars($j->getFilm()->getJudul()) ?></strong> &bull; 
+                                <div class="small text-light opacity-75 mb-2">
+                                    Film: <strong class="text-white"><?= htmlspecialchars($j->getFilm()->getJudul()) ?></strong> &bull; 
                                     <?= htmlspecialchars($j->getStudio()->getNamaStudio()) ?> &bull; 
                                     Kursi: <span class="badge bg-primary"><?= implode(', ', $kursiStr) ?></span>
                                 </div>

@@ -15,7 +15,7 @@ $allJadwal = CineTix::getAllJadwal();
             <i class="bi bi-stars me-1"></i> BIOSKOP CINETIX RESMI
         </span>
         <h1 class="display-4 fw-black text-white mb-3">Tonton Film Favorit Anda Hari Ini</h1>
-        <p class="lead text-secondary mx-auto" style="max-width: 650px;">
+        <p class="lead text-light mx-auto" style="max-width: 650px; opacity: 0.95;">
             Pesan tiket film bioskop secara cepat, pilih kursi favorit Anda, dan nikmati kemudahan pembayaran tunai, e-wallet, atau transfer bank.
         </p>
     </div>
@@ -28,9 +28,9 @@ $allJadwal = CineTix::getAllJadwal();
             <h3 class="fw-bold text-white mb-1">
                 <i class="bi bi-film text-danger me-2"></i>Film Sedang Tayang
             </h3>
-            <p class="text-muted small mb-0">Daftar film bioskop yang tersedia di CineTix</p>
+            <p class="page-subtitle mb-0">Daftar film bioskop yang tersedia di CineTix</p>
         </div>
-        <span class="badge bg-dark border border-secondary text-secondary px-3 py-2 rounded-pill">
+        <span class="badge bg-dark border border-secondary text-light px-3 py-2 rounded-pill">
             <?= count($allFilm) ?> Film Tersedia
         </span>
     </div>
@@ -53,10 +53,10 @@ $allJadwal = CineTix::getAllJadwal();
                     <div class="card-body d-flex flex-column p-4">
                         <div class="d-flex justify-content-between align-items-start mb-2">
                             <span class="badge bg-secondary text-light"><?= htmlspecialchars($f->getGenre()) ?></span>
-                            <span class="text-muted small"><i class="bi bi-clock me-1"></i><?= $f->getDurasi() ?> menit</span>
+                            <span class="text-light opacity-75 small"><i class="bi bi-clock me-1"></i><?= $f->getDurasi() ?> menit</span>
                         </div>
                         <h5 class="card-title fw-bold text-white mb-2"><?= htmlspecialchars($f->getJudul()) ?></h5>
-                        <p class="card-text text-secondary small flex-grow-1">
+                        <p class="card-text text-light opacity-75 small flex-grow-1">
                             <?= htmlspecialchars($f->getSinopsis()) ?>
                         </p>
                         <a href="#jadwal-film-<?= $f->getIdFilm() ?>" class="btn btn-outline-warning w-100 mt-3 rounded-pill">
@@ -75,14 +75,14 @@ $allJadwal = CineTix::getAllJadwal();
                 <h3 class="fw-bold text-white mb-1">
                     <i class="bi bi-clock-history text-warning me-2"></i>Jadwal Tayang & Tiket
                 </h3>
-                <p class="text-muted small mb-0">Pilih jadwal penayangan dan studio untuk memesan kursi</p>
+                <p class="page-subtitle mb-0">Pilih jadwal penayangan dan studio untuk memesan kursi</p>
             </div>
         </div>
 
         <?php if (empty($allJadwal)): ?>
             <div class="alert alert-dark border border-secondary text-center py-4">
-                <i class="bi bi-calendar-x fs-2 text-muted mb-2 d-block"></i>
-                Belum ada jadwal penayangan yang tersedia saat ini.
+                <i class="bi bi-calendar-x fs-2 text-warning mb-2 d-block"></i>
+                <span class="text-light">Belum ada jadwal penayangan yang tersedia saat ini.</span>
             </div>
         <?php else: ?>
             <div class="row g-4">
@@ -106,27 +106,27 @@ $allJadwal = CineTix::getAllJadwal();
                                 </div>
 
                                 <h5 class="fw-bold text-white mb-1"><?= htmlspecialchars($j->getFilm()->getJudul()) ?></h5>
-                                <p class="text-muted small mb-3">
-                                    <i class="bi bi-tag me-1"></i><?= htmlspecialchars($j->getFilm()->getGenre()) ?> &bull; 
+                                <p class="text-light small mb-3 opacity-75">
+                                    <i class="bi bi-tag me-1 text-warning"></i><?= htmlspecialchars($j->getFilm()->getGenre()) ?> &bull; 
                                     <?= $j->getFilm()->getDurasi() ?> mnt &bull; 
                                     Rating: <?= htmlspecialchars($j->getFilm()->getRatingUsia()) ?>
                                 </p>
 
                                 <div class="p-3 bg-dark rounded-3 mb-3 border border-secondary">
                                     <div class="d-flex justify-content-between mb-1 small text-light">
-                                        <span><i class="bi bi-calendar3 text-info me-2"></i>Tanggal:</span>
-                                        <span class="fw-bold"><?= date('d M Y', strtotime($j->getTanggal())) ?></span>
+                                        <span class="text-light opacity-75"><i class="bi bi-calendar3 text-info me-2"></i>Tanggal:</span>
+                                        <span class="fw-bold text-white"><?= date('d M Y', strtotime($j->getTanggal())) ?></span>
                                     </div>
                                     <div class="d-flex justify-content-between mb-1 small text-light">
-                                        <span><i class="bi bi-alarm text-info me-2"></i>Jam Mulai:</span>
-                                        <span class="fw-bold"><?= htmlspecialchars($j->getJamMulai()) ?> WIB</span>
+                                        <span class="text-light opacity-75"><i class="bi bi-alarm text-info me-2"></i>Jam Mulai:</span>
+                                        <span class="fw-bold text-white"><?= htmlspecialchars($j->getJamMulai()) ?> WIB</span>
                                     </div>
                                     <div class="d-flex justify-content-between small text-light">
-                                        <span><i class="bi bi-cash text-success me-2"></i>Harga Tiket:</span>
+                                        <span class="text-light opacity-75"><i class="bi bi-cash text-success me-2"></i>Harga Tiket:</span>
                                         <span class="fw-bold text-warning fs-6"><?= CineTix::rp($hargaAkhir) ?></span>
                                     </div>
                                     <?php if ($isPremium): ?>
-                                        <div class="text-end small text-secondary mt-1" style="font-size: 0.75rem;">
+                                        <div class="text-end small text-light opacity-75 mt-1" style="font-size: 0.75rem;">
                                             (Harga dasar <?= CineTix::rp($j->getHargaDasar()) ?> + Biaya Premium <?= CineTix::rp($studio->getBiayaTambahan()) ?>)
                                         </div>
                                     <?php endif; ?>

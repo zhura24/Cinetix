@@ -32,7 +32,7 @@ require_once __DIR__ . '/../includes/header.php';
             <h3 class="fw-bold text-white mb-1">
                 <i class="bi bi-shield-lock-fill text-danger me-2"></i>Panel Administrator
             </h3>
-            <p class="text-muted small mb-0">Kode Admin: <strong><?= htmlspecialchars($user->getKodeAdmin()) ?></strong> &bull; Kelola bioskop dan lihat laporan penjualan</p>
+            <p class="page-subtitle mb-0">Kode Admin: <strong class="text-white"><?= htmlspecialchars($user->getKodeAdmin()) ?></strong> &bull; Kelola bioskop dan lihat laporan penjualan</p>
         </div>
         <div class="d-flex gap-2">
             <a href="film.php" class="btn btn-outline-warning btn-sm rounded-pill px-3">
@@ -49,44 +49,44 @@ require_once __DIR__ . '/../includes/header.php';
         <div class="col-sm-6 col-lg-3">
             <div class="card card-custom p-3 border-success shadow-sm">
                 <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="text-muted small">Total Penjualan</span>
+                    <span class="stat-card-label">Total Penjualan</span>
                     <i class="bi bi-cash-stack text-success fs-4"></i>
                 </div>
-                <h4 class="fw-bold text-success mb-0"><?= CineTix::rp($totalPenjualan) ?></h4>
-                <span class="small text-muted">Dari pesanan terkonfirmasi</span>
+                <h4 class="fw-bold text-success mb-1"><?= CineTix::rp($totalPenjualan) ?></h4>
+                <span class="stat-card-sub">Dari pesanan terkonfirmasi</span>
             </div>
         </div>
 
         <div class="col-sm-6 col-lg-3">
             <div class="card card-custom p-3 border-warning shadow-sm">
                 <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="text-muted small">Tiket Terjual</span>
+                    <span class="stat-card-label">Tiket Terjual</span>
                     <i class="bi bi-ticket-perforated-fill text-warning fs-4"></i>
                 </div>
-                <h4 class="fw-bold text-warning mb-0"><?= $totalTiketTerjual ?> Tiket</h4>
-                <span class="small text-muted">Kursi bioskop terisi</span>
+                <h4 class="fw-bold text-warning mb-1"><?= $totalTiketTerjual ?> Tiket</h4>
+                <span class="stat-card-sub">Kursi bioskop terisi</span>
             </div>
         </div>
 
         <div class="col-sm-6 col-lg-3">
             <div class="card card-custom p-3 border-info shadow-sm">
                 <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="text-muted small">Film Aktif</span>
+                    <span class="stat-card-label">Film Aktif</span>
                     <i class="bi bi-film text-info fs-4"></i>
                 </div>
-                <h4 class="fw-bold text-info mb-0"><?= count($allFilm) ?> Film</h4>
-                <span class="small text-muted"><a href="film.php" class="text-info text-decoration-none">Kelola film &rarr;</a></span>
+                <h4 class="fw-bold text-info mb-1"><?= count($allFilm) ?> Film</h4>
+                <span class="stat-card-sub"><a href="film.php" class="text-info fw-bold text-decoration-none">Kelola film &rarr;</a></span>
             </div>
         </div>
 
         <div class="col-sm-6 col-lg-3">
             <div class="card card-custom p-3 border-secondary shadow-sm">
                 <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="text-muted small">Jadwal Penayangan</span>
-                    <i class="bi bi-calendar-event text-secondary fs-4"></i>
+                    <span class="stat-card-label">Jadwal Penayangan</span>
+                    <i class="bi bi-calendar-event text-light fs-4"></i>
                 </div>
-                <h4 class="fw-bold text-light mb-0"><?= count($allJadwal) ?> Jadwal</h4>
-                <span class="small text-muted"><a href="jadwal.php" class="text-light text-decoration-none">Kelola jadwal &rarr;</a></span>
+                <h4 class="fw-bold text-light mb-1"><?= count($allJadwal) ?> Jadwal</h4>
+                <span class="stat-card-sub"><a href="jadwal.php" class="text-warning fw-bold text-decoration-none">Kelola jadwal &rarr;</a></span>
             </div>
         </div>
     </div>
@@ -98,7 +98,7 @@ require_once __DIR__ . '/../includes/header.php';
                 <h4 class="fw-bold text-white mb-1">
                     <i class="bi bi-file-earmark-bar-graph text-warning me-2"></i>Laporan Penjualan Bioskop
                 </h4>
-                <p class="text-muted small mb-0">Rekapitulasi transaksi penjualan tiket bioskop yang telah terkonfirmasi</p>
+                <p class="page-subtitle mb-0">Rekapitulasi transaksi penjualan tiket bioskop yang telah terkonfirmasi</p>
             </div>
             <button onclick="window.print()" class="btn btn-outline-light btn-sm rounded-pill px-3">
                 <i class="bi bi-printer me-1"></i> Cetak Laporan
@@ -107,8 +107,8 @@ require_once __DIR__ . '/../includes/header.php';
 
         <?php if (empty($daftarPesanan)): ?>
             <div class="alert alert-dark border border-secondary text-center py-4">
-                <i class="bi bi-inbox fs-2 text-muted mb-2 d-block"></i>
-                Belum ada transaksi penjualan yang berhasil dikonfirmasi.
+                <i class="bi bi-inbox fs-2 text-warning mb-2 d-block"></i>
+                <span class="text-light">Belum ada transaksi penjualan yang berhasil dikonfirmasi.</span>
             </div>
         <?php else: ?>
             <div class="table-responsive">
@@ -141,12 +141,12 @@ require_once __DIR__ . '/../includes/header.php';
                                 <td><span class="badge bg-secondary font-monospace"><?= htmlspecialchars($ps->getIdPemesanan()) ?></span></td>
                                 <td>
                                     <div class="fw-bold text-light"><?= htmlspecialchars($ps->getPelanggan()->getNama()) ?></div>
-                                    <div class="small text-muted"><?= htmlspecialchars($ps->getPelanggan()->getEmail()) ?></div>
+                                    <div class="small text-light opacity-75"><?= htmlspecialchars($ps->getPelanggan()->getEmail()) ?></div>
                                 </td>
                                 <td class="fw-bold text-white"><?= htmlspecialchars($j->getFilm()->getJudul()) ?></td>
                                 <td class="small">
-                                    <div><?= htmlspecialchars($j->getStudio()->getNamaStudio()) ?></div>
-                                    <div class="text-muted"><?= date('d/m/Y', strtotime($j->getTanggal())) ?> <?= htmlspecialchars($j->getJamMulai()) ?> WIB</div>
+                                    <div class="text-white"><?= htmlspecialchars($j->getStudio()->getNamaStudio()) ?></div>
+                                    <div class="text-light opacity-75"><?= date('d/m/Y', strtotime($j->getTanggal())) ?> <?= htmlspecialchars($j->getJamMulai()) ?> WIB</div>
                                 </td>
                                 <td>
                                     <span class="badge bg-primary"><?= implode(', ', $kursiStr) ?></span>

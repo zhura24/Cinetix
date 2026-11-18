@@ -110,7 +110,7 @@ $baseUrl = $isSubdir ? '../' : './';
                             <i class="bi bi-person-circle me-1"></i> <?= htmlspecialchars($currentUser->getNama()) ?>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-                            <li><span class="dropdown-item-text text-muted small"><?= htmlspecialchars($currentUser->getEmail()) ?></span></li>
+                            <li><span class="dropdown-item-text text-light opacity-75 small"><?= htmlspecialchars($currentUser->getEmail()) ?></span></li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 <a class="dropdown-item text-danger" href="<?= $baseUrl ?>logout.php">
